@@ -1,0 +1,42 @@
+void boat(int location, animal* adding, string playerInput)
+{
+    string a;
+    if(location == 1)
+        a = " ";
+    else if (location == 0)
+        a = "                      ";
+
+        for(int i = 0; i < 4; i ++)
+        {
+                system("clear");
+                cout << "     Left Riverbank       Right Riverbank" << endl << endl;
+                cout <<  a << "           |"<< endl;
+                cout <<  a << "          /|        "<< endl;
+                cout <<  a << "         / |\\"<< endl;
+                cout <<  a << "        /  | \\"<< endl;
+                cout <<  a << "       /   || \\"<< endl;
+                cout <<  a << "      /    | | \\"<< endl;
+                cout <<  a << "     /     | |  \\"<< endl;
+                cout <<  a << "    /      | |   \\"<< endl;
+                cout <<  a << "   /       ||     \\"<< endl;
+                cout <<  a << "  /        /       \\"<< endl;
+                cout <<  a << " /________/         \\"<< endl;
+                cout <<  a << " ________/__________--/"<< endl;
+                cout <<  a << " \\___________________/"<< endl;
+                // if not a pass, play sound of animal in boat
+                //if(playerInput != "4"){
+                    cout << a << "          ";
+                    adding->getSpecies();
+                    cout << ": ";
+                    adding->makeSound(1);
+                    cout << "!" << endl;
+                //}
+
+                if(location == 1)
+                    a = extend(a);
+                if(location == 0)
+                    a = remove(a);
+
+                pause(1);
+        }
+}
